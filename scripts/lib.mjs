@@ -46,8 +46,8 @@ export function resolveRepository(argv = process.argv.slice(2)) {
     const parsed = parseRepo(c);
     if (parsed) return parsed;
   }
-  const fallback = loadConfig().repository || "https://github.com/kayingai/open-zcode-game-plugins";
-  return { url: fallback, owner: "kayingai", repo: "open-zcode-game-plugins", placeholder: true };
+  const fallback = loadConfig().repository || "https://github.com/kaying-ai/open-zcode-game-plugins";
+  return { url: fallback, owner: "kaying-ai", repo: "open-zcode-game-plugins", placeholder: true };
 }
 
 function gitRemoteOrigin() {

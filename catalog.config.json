@@ -1,7 +1,7 @@
 {
   "name": "open-zcode-game-plugins",
   "branch": "main",
-  "repository": "https://github.com/kayingai/open-zcode-game-plugins",
+  "repository": "https://github.com/kaying-ai/open-zcode-game-plugins",
   "license": "Apache-2.0",
   "schemaVersion": "1.0.0",
   "description": "Community-maintained catalog of game-development plugins for ZCode and KayingCode. Unofficial.",

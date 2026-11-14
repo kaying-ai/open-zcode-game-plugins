@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/schema/plugin.schema.json",
+  "$id": "https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/schema/plugin.schema.json",
   "title": "open-zcode-game-plugins plugin entry",
   "description": "One file per plugin at plugins/<name>.json. One PR adds or updates exactly one such file. catalog.json and the README plugin tables are generated from these files — never edit them by hand.",
   "type": "object",

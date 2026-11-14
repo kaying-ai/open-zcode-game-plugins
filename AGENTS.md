@@ -6,7 +6,7 @@
 ## 0. 开始之前必须知道的事实
 
 1. **唯一数据源**是 `catalog.json`（机器可读），不要用网页抓取 README 表格来推断插件信息。
-   `https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json`（部署后由 CI 写入真实地址，直接读 `catalog.json` 里的 `catalogUrl` 自检）。
+   `https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json`（部署后由 CI 写入真实地址，直接读 `catalog.json` 里的 `catalogUrl` 自检）。
 2. 本仓库是**社区索引，非 ZCode 官方产物**，不隶属于 Z.AI / 智谱。不要向用户宣称插件经过官方审核。
 3. **关键宿主限制**：KayingCode.localrun 等本地优先宿主拒绝远程 marketplace / CDN 插件包，插件只支持「内置 + 本地安装」。因此**禁止**把 GitHub URL 直接注册为市场源；必须先把内容落到本地目录，再注册为**本地源**。
 4. 本仓库不提供可执行安装器、不托管官方 CDN 资源；`bundled/` 是少数插件的离线副本，其余插件本体在各自作者仓库。
@@ -41,7 +41,7 @@
 命令模板（POSIX；Windows 用 `curl.exe` 与 `tar.exe`）：
 
 ```bash
-CATALOG_URL="https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json"
+CATALOG_URL="https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json"
 curl -fsSL --max-time 30 "$CATALOG_URL" -o catalog.json
 
 # bundled：整仓快照（一次取回，无需访问第二个源）
@@ -124,7 +124,7 @@ Agent 可以完全按此流程提交一个插件，无需人工改写文档。
 **安装**
 
 ```text
-请读取 https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json，
+请读取 https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json，
 按 catalog.json 的 protocol 字段和仓库 AGENTS.md 执行：为宿主 <zcode|kayingcode> 挑选适合
 「<游戏开发场景>」的插件，从 GitHub 取得内容并放到本地稳定目录，用 verify-install.mjs 校验，
 再注册为本地市场源并安装。动手前先报告插件名、版本、许可和目标路径，等我确认；

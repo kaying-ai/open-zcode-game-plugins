@@ -26,7 +26,7 @@ ZCode 兼容宿主的本地优先形态（如 KayingCode.localrun）**只允许�
 把下面这段贴给宿主里的 Agent（把宿主与场景改成你的）：
 
 ```text
-请从 https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json
+请从 https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json
 读取插件目录，为宿主 zcode 挑选适合「游戏 UI 设计」的插件，按 catalog.json 的 protocol
 与仓库 AGENTS.md 从 GitHub 取回内容、用 verify-install.mjs 校验、注册为本地市场源并安装。
 动手前报告插件名、版本、许可和目标路径并等我确认；不要注册远程 URL，不要执行插件自带脚本。
@@ -45,7 +45,7 @@ Agent 会执行的 7 步见 [AGENTS.md 第 1 节](../AGENTS.md)。关键点：
 
 ```bash
 # 1) 取仓库
-git clone --depth 1 https://github.com/kayingai/open-zcode-game-plugins.git
+git clone --depth 1 https://github.com/kaying-ai/open-zcode-game-plugins.git
 cd open-zcode-game-plugins
 
 # 2) 确认包完整（可选但推荐）
@@ -83,7 +83,7 @@ node scripts/verify-install.mjs bundled/kaying-for-ui/zcode \
 
 ```bash
 curl -fsSL --max-time 30 \
-  https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json \
+  https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json \
   -o catalog.json
 
 # 例：筛出支持 KayingCode 的游戏 UI 插件

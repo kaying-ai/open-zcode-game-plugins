@@ -10,12 +10,12 @@ A community-maintained catalog of **game-development plugins for ZCode and Kayin
 > **This is not an official ZCode project, nor the official ZCode plugin marketplace.** It is not affiliated with, endorsed by, sponsored by, or otherwise connected to Z.AI / Zhipu AI or the ZCode maintainers. Being listed here does not mean being listed by ZCode officially. See [NOTICE](NOTICE).
 
 > [!NOTE]
-> Hosted at `kayingai/open-zcode-game-plugins`. Raw / clone / archive URLs in the catalog are derived from `GITHUB_REPOSITORY` (or the local `origin` remote); no manual editing is needed.
+> Hosted at `kaying-ai/open-zcode-game-plugins`. Raw / clone / archive URLs in the catalog are derived from `GITHUB_REPOSITORY` (or the local `origin` remote); no manual editing is needed.
 
 | | |
 | --- | --- |
 | License | [Apache-2.0](LICENSE) (each plugin keeps its own license) |
-| Catalog URL | `https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json` |
+| Catalog URL | `https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json` |
 | Hosts | `zcode` · `kayingcode` |
 | Scope | Design, UI, art, engine integration, content/levels, audio, engineering tooling |
 | Workflow | Community PRs, one plugin per PR; catalog and README tables regenerate after merge |
@@ -42,7 +42,7 @@ Paste this into the ZCode / KayingCode Agent. It will fetch the catalog, filter,
 
 ```text
 Read the plugin catalog at
-https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json
+https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json
 and pick a plugin that fits my host (zcode / kayingcode) and game-development task.
 Then follow the catalog's "protocol" field and the repository's AGENTS.md to install it
 locally and register it as a LOCAL marketplace source. Before installing, report the
@@ -62,7 +62,7 @@ Full details:
 ### Manual quick start
 
 ```bash
-git clone --depth 1 https://github.com/kayingai/open-zcode-game-plugins.git
+git clone --depth 1 https://github.com/kaying-ai/open-zcode-game-plugins.git
 cd open-zcode-game-plugins
 
 # The first plugin is bundled, so no second download is needed

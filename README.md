@@ -10,12 +10,12 @@
 > **本仓库不是 ZCode 官方项目，也不是 ZCode 官方插件市场**，与 Z.AI / 智谱及 ZCode 维护者没有隶属、授权、背书或合作关系。收录于此不等于被 ZCode 官方收录。详见 [NOTICE](NOTICE)。
 
 > [!NOTE]
-> 本仓库托管于 `kayingai/open-zcode-game-plugins`；清单里的 raw / clone / archive URL 由 `GITHUB_REPOSITORY`（或本地 `origin`）自动推导，无需手工维护。
+> 本仓库托管于 `kaying-ai/open-zcode-game-plugins`；清单里的 raw / clone / archive URL 由 `GITHUB_REPOSITORY`（或本地 `origin`）自动推导，无需手工维护。
 
 | | |
 | --- | --- |
 | 协议 | [Apache-2.0](LICENSE)（插件本体适用各自许可） |
-| 清单入口 | `https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json` |
+| 清单入口 | `https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json` |
 | 支持宿主 | `zcode` · `kayingcode` |
 | 收录范围 | 游戏策划、UI、美术、引擎集成、内容关卡、音频、工程工具链 |
 | 维护方式 | 社区 PR，一个 PR 一个插件；合并后自动生成清单与 README 表格 |
@@ -41,7 +41,7 @@
 把下面这段直接粘给 ZCode / KayingCode 里的 Agent 即可，它会自行读取清单、筛选、下载、校验并完成安装：
 
 ```text
-请从 https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json
+请从 https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json
 读取插件目录，按我需要的宿主（zcode / kayingcode）和游戏开发场景筛选合适的插件，
 然后依照该目录中的 protocol 字段与仓库 AGENTS.md 的协议，把它安装到本机并注册为「本地市场源」。
 安装前告诉我插件名称、版本、许可和将要写入的本地路径；不要注册任何远程市场 URL，
@@ -59,7 +59,7 @@ Agent 遵循的是 **`github-to-local-source`** 协议：从 GitHub 取得内容
 ### 手工快速开始
 
 ```bash
-git clone --depth 1 https://github.com/kayingai/open-zcode-game-plugins.git
+git clone --depth 1 https://github.com/kaying-ai/open-zcode-game-plugins.git
 cd open-zcode-game-plugins
 
 # 查看内置插件（第一个插件已随仓库附带，无需联网取插件本体）

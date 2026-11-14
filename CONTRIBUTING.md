@@ -27,7 +27,7 @@
 # 1) Fork 后克隆自己的 fork
 git clone https://github.com/<you>/open-zcode-game-plugins.git
 cd open-zcode-game-plugins
-git remote add upstream https://github.com/kayingai/open-zcode-game-plugins.git
+git remote add upstream https://github.com/kaying-ai/open-zcode-game-plugins.git
 git switch -c plugin/my-game-plugin
 
 # 2) 从模板创建唯一需要改的文件

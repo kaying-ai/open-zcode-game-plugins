@@ -29,12 +29,12 @@
       "role": "compatible host (unofficial ZCode derivative)"
     }
   ],
-  "repository": "https://github.com/kayingai/open-zcode-game-plugins",
-  "catalogUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json",
-  "rawBase": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/",
-  "browseBase": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/",
-  "archiveUrl": "https://github.com/kayingai/open-zcode-game-plugins/archive/refs/heads/main.tar.gz",
-  "cloneUrl": "https://github.com/kayingai/open-zcode-game-plugins.git",
+  "repository": "https://github.com/kaying-ai/open-zcode-game-plugins",
+  "catalogUrl": "https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/catalog.json",
+  "rawBase": "https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/",
+  "browseBase": "https://github.com/kaying-ai/open-zcode-game-plugins/tree/main/",
+  "archiveUrl": "https://github.com/kaying-ai/open-zcode-game-plugins/archive/refs/heads/main.tar.gz",
+  "cloneUrl": "https://github.com/kaying-ai/open-zcode-game-plugins.git",
   "branch": "main",
   "hosts": [
     "zcode",
@@ -152,8 +152,8 @@
             "pluginManifest": ".zcode-plugin/plugin.json",
             "licenseFile": "LICENSE",
             "noticeFile": "NOTICE",
-            "browseUrl": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/bundled/kaying-for-ui/zcode",
-            "marketplaceUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/bundled/kaying-for-ui/zcode/marketplace.json"
+            "browseUrl": "https://github.com/kaying-ai/open-zcode-game-plugins/tree/main/bundled/kaying-for-ui/zcode",
+            "marketplaceUrl": "https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/bundled/kaying-for-ui/zcode/marketplace.json"
           },
           "kayingcode": {
             "path": "bundled/kaying-for-ui/kayingcode",
@@ -161,8 +161,8 @@
             "pluginManifest": ".kayingcode-plugin/plugin.json",
             "licenseFile": "LICENSE",
             "noticeFile": "NOTICE",
-            "browseUrl": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/bundled/kaying-for-ui/kayingcode",
-            "marketplaceUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/bundled/kaying-for-ui/kayingcode/marketplace.json"
+            "browseUrl": "https://github.com/kaying-ai/open-zcode-game-plugins/tree/main/bundled/kaying-for-ui/kayingcode",
+            "marketplaceUrl": "https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/bundled/kaying-for-ui/kayingcode/marketplace.json"
           }
         }
       },
@@ -179,11 +179,11 @@
       "addedAt": "2026-11-14",
       "updatedAt": "2026-11-14",
       "catalog": {
-        "entryUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/plugins/kaying-for-ui.json",
-        "entryBrowseUrl": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/plugins/kaying-for-ui.json",
-        "rawBase": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/",
-        "archiveUrl": "https://github.com/kayingai/open-zcode-game-plugins/archive/refs/heads/main.tar.gz",
-        "cloneUrl": "https://github.com/kayingai/open-zcode-game-plugins.git"
+        "entryUrl": "https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/plugins/kaying-for-ui.json",
+        "entryBrowseUrl": "https://github.com/kaying-ai/open-zcode-game-plugins/tree/main/plugins/kaying-for-ui.json",
+        "rawBase": "https://raw.githubusercontent.com/kaying-ai/open-zcode-game-plugins/main/",
+        "archiveUrl": "https://github.com/kaying-ai/open-zcode-game-plugins/archive/refs/heads/main.tar.gz",
+        "cloneUrl": "https://github.com/kaying-ai/open-zcode-game-plugins.git"
       }
     }
   ]
