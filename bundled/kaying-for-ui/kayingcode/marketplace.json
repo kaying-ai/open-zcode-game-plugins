@@ -1,0 +1,53 @@
+{
+  "name": "kaying-for-ui-kayingcode-marketplace",
+  "plugins": [
+    {
+      "name": "kaying-for-ui",
+      "source": ".",
+      "version": "0.2.0",
+      "description": "Game UI design and handoff workflow: from planning GDD/PRD/interaction logic to design specs, screen extension, visual generation, component breakdown, sprite slicing, atlas, and Godot/Unity/Cocos engine JSON handoff, with a reproducible contract, validation, and packaging toolchain.",
+      "displayName": "Game UI Design & Handoff",
+      "displayName_i18n": {
+        "zh-CN": "游戏界面设计UI设计-咖影",
+        "en-US": "Game UI Design & Handoff"
+      },
+      "description_i18n": {
+        "zh-CN": "游戏界面设计UI设计-咖影：把游戏概念或参考图变成可复现的多屏 UI 工程——GDD/PRD/交互、设计令牌、界面延展、页面视觉、组件拆解、雪碧图切图、图集打包，直至 Godot/Unity/Cocos 引擎 JSON 交付。",
+        "en-US": "Turn a game concept or reference into a reproducible multi-screen UI project: GDD/PRD/interaction, design tokens, screen extension, page visuals, component breakdown, sprite splitting, atlas packing, and engine JSON handoff."
+      },
+      "category": "design",
+      "keywords": [
+        "game UI",
+        "UI design",
+        "game interface",
+        "component breakdown",
+        "sprite sheet",
+        "Atlas",
+        "Godot",
+        "Unity",
+        "Cocos",
+        "Game UI",
+        "design system",
+        "游戏UI",
+        "游戏界面",
+        "UI设计",
+        "切图",
+        "图集",
+        "雪碧图",
+        "组件拆解"
+      ],
+      "examplePrompts": [
+        "Use kaying-for-ui to build a complete UI project for a Chinese-style card RPG from reference images: finish planning and design specs first, then generate the home screen visual",
+        "Split this home screen into transparent-background components, then slice the sprite sheet into individual PNGs and pack them",
+        "Generate 9-slice, atlas, and Unity/Godot handoff JSON"
+      ],
+      "examplePrompts_i18n": {
+        "zh-CN": [
+          "用咖影根据参考图为一个国风卡牌 RPG 搭建完整 UI 项目：先完成策划与设计规格，再生成主界面视觉",
+          "把这张主界面拆成透明底组件，然后切雪碧图为单张 PNG 并打包图集",
+          "生成 9-slice、图集与 Unity/Godot 交付 JSON"
+        ]
+      }
+    }
+  ]
+}

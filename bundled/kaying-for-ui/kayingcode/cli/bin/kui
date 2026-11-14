@@ -1,0 +1,24 @@
+#!/bin/sh
+# kui launcher — runs the Node implementation at cli/src/main.mjs.
+# Node ships with the host app (WorkBuddy / CodeBuddy), so nothing has to be installed.
+# Resolution order: PATH -> $WORKBUDDY_CONFIG_DIR/binaries/node -> ~/.workbuddy/binaries/node
+here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+pick_node() {
+  if command -v node >/dev/null 2>&1; then
+    command -v node
+    return 0
+  fi
+  root=${WORKBUDDY_CONFIG_DIR:-${CODEBUDDY_CONFIG_DIR:-$HOME/.workbuddy}}
+  for candidate in "$root"/binaries/node/versions/*/bin/node; do
+    [ -x "$candidate" ] && { echo "$candidate"; return 0; }
+  done
+  return 1
+}
+
+node_bin=$(pick_node) || {
+  echo "kui: no Node runtime found (checked PATH and \$HOME/.workbuddy/binaries/node)" >&2
+  exit 2
+}
+
+exec "$node_bin" "$here/../src/main.mjs" "$@"

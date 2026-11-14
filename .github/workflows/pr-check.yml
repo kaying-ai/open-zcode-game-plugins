@@ -1,0 +1,67 @@
+name: PR check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate plugin entries
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate schema + semantics
+        run: node scripts/validate.mjs
+
+      - name: Preview generated catalog and README rows
+        run: |
+          {
+            echo "## 插件目录生成预览 / Catalog preview"
+            echo
+            echo '```text'
+            node scripts/build.mjs --dry-run --repo=${{ github.repository }}
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Enforce PR scope (one plugin, no generated files)
+        shell: bash
+        run: |
+          BASE_REF="${{ github.event.pull_request.base.ref || 'main' }}"
+          git fetch --no-tags origin "$BASE_REF" --depth=1 || true
+          BASE="origin/$BASE_REF"
+          CHANGED="$(git diff --name-only "$BASE"...HEAD || true)"
+          echo "Changed files:"
+          printf '%s\n' "$CHANGED"
+          {
+            echo "## 变更范围 / Changed files"
+            echo '```'
+            printf '%s\n' "$CHANGED"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if printf '%s\n' "$CHANGED" | grep -qx 'catalog.json'; then
+            echo "::error::catalog.json is generated after merge — do not edit it in a PR."
+            exit 1
+          fi
+
+          N="$(printf '%s\n' "$CHANGED" | grep -c '^plugins/[^/]*\.json$' || true)"
+          if [ "$N" -gt 1 ]; then
+            echo "::error::One PR must touch at most one plugins/<name>.json (found $N)."
+            exit 1
+          fi
+
+          if git diff "$BASE"...HEAD -- README.md README.en.md | grep -qE '^[+-]<!-- PLUGINS|^[+-]\| \*\*\['; then
+            echo "::warning::README plugin tables are generated after merge; hand edits will be overwritten."
+          fi
+
+          echo "PR scope OK ($N plugin entry file(s))."

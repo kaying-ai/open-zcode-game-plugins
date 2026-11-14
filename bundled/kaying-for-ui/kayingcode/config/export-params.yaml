@@ -1,0 +1,50 @@
+schema_version: 1
+atlas:
+  max_size: [2048, 2048]
+  padding: 2
+  power_of_two: true
+  allow_rotation: false
+godot:
+  manifest_format: json
+  native_theme_export: false
+  pack:
+    - README.md
+unity:
+  manifest_format: json
+  sprite_mode: multiple
+  pixels_per_unit: 100
+  pack:
+    - README.md
+cocos:
+  manifest_format: json
+  pack:
+    - README.md
+generic:
+  manifest_format: json
+  pack:
+    - README.md
+taptap-maker:
+  manifest_format: json
+  pack:
+    - theme.lua
+    - component-map.json
+    - screens.json
+    - README.md
+    - demo/main.lua
+    - demo/ui-data.lua
+    - demo/README.md
+  ui:
+    engine: UrhoX
+    library: urhox-libs/UI
+    layout: Yoga
+    render: NanoVG
+    script: Lua
+    init: ["UI.Init", "build tree", "UI.SetRoot"]
+    scale: UI.Scale.DEFAULT
+  style_packs: [DefaultTaptap, ui-astroon, ui-brawlforge, ui-pixelforge]
+notes:
+  - Export scripts create deterministic JSON handoff manifests.
+  - Every engine folder includes README.md — agent guide to auto-apply UI on that platform.
+  - Native Godot, Unity, and Cocos project importers are roadmap integrations.
+  - taptap-maker export is a Maker/UrhoX UI handoff (manifest + theme + maps), not a full game project.
+  - taptap-maker also ships an optional runnable demo/ (reference implementation; all events print "[kui-demo]" log lines).

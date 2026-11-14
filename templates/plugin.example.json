@@ -1,0 +1,56 @@
+{
+  "$schema": "../schema/plugin.schema.json",
+  "name": "your-game-plugin",
+  "version": "1.0.0",
+  "displayName": "Your Game Plugin",
+  "displayName_i18n": {
+    "zh-CN": "你的游戏插件",
+    "en": "Your Game Plugin"
+  },
+  "description": "One sentence in English describing what this plugin lets an Agent do for game development.",
+  "description_i18n": {
+    "zh-CN": "用一句话中文说明这个插件能为游戏开发做什么。",
+    "en": "One sentence in English describing what this plugin lets an Agent do for game development."
+  },
+  "category": "game-tooling",
+  "keywords": ["example", "game"],
+  "hosts": ["zcode", "kayingcode"],
+  "author": {
+    "name": "Your Name or Org",
+    "url": "https://github.com/your-name"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/your-name/your-game-plugin",
+  "homepage": "https://github.com/your-name/your-game-plugin#readme",
+  "source": {
+    "type": "git",
+    "repository": "https://github.com/your-name/your-game-plugin.git",
+    "ref": "PASTE_A_FULL_40_CHAR_COMMIT_SHA_HERE",
+    "packages": {
+      "zcode": {
+        "path": "platform/forZcode",
+        "marketplace": "marketplace.json",
+        "pluginManifest": ".zcode-plugin/plugin.json",
+        "licenseFile": "LICENSE",
+        "noticeFile": "NOTICE"
+      },
+      "kayingcode": {
+        "path": "platform/forKayingCode",
+        "marketplace": "marketplace.json",
+        "pluginManifest": ".kayingcode-plugin/plugin.json",
+        "licenseFile": "LICENSE",
+        "noticeFile": "NOTICE"
+      }
+    }
+  },
+  "install": {
+    "strategy": "local-marketplace",
+    "requires": [],
+    "notes_i18n": {
+      "zh-CN": "克隆并把对应宿主的包目录放到本地稳定路径，注册为本地市场源后安装。",
+      "en": "Clone the repo, copy the host package to a stable local path, register it as a local marketplace source, then install."
+    }
+  },
+  "addedAt": "2026-11-14",
+  "updatedAt": "2026-11-14"
+}

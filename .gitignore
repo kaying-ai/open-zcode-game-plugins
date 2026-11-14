@@ -1,0 +1,16 @@
+# Dependencies / caches (this repo has zero runtime dependencies)
+node_modules/
+.tmp/
+.cache/
+*.log
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Never commit generated archives; catalog.json and README tables ARE committed
+*.zip
+*.tar.gz

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "open-zcode-game-plugins",
+  "description": "Community-maintained catalog of game-development plugins for ZCode and KayingCode. Unofficial.",
+  "description_i18n": {
+    "zh-CN": "社区维护的 ZCode / KayingCode 游戏开发方向开源插件目录，非官方产物。",
+    "en": "Community-maintained catalog of game-development plugins for ZCode and KayingCode. Unofficial."
+  },
+  "license": "Apache-2.0",
+  "unofficial": true,
+  "notice": "Not an official ZCode project. Not affiliated with or endorsed by Z.AI / Zhipu AI.",
+  "upstream": [
+    {
+      "name": "ZCode",
+      "url": "https://github.com/zai-org/ZCode",
+      "license": "Apache-2.0",
+      "role": "compatible host"
+    },
+    {
+      "name": "zcode-plugins",
+      "url": "https://github.com/zai-org/zcode-plugins",
+      "license": "Apache-2.0",
+      "role": "official marketplace format reference"
+    },
+    {
+      "name": "KayingCode",
+      "url": "https://gitee.com/citiao/ZCode",
+      "license": "Apache-2.0",
+      "role": "compatible host (unofficial ZCode derivative)"
+    }
+  ],
+  "repository": "https://github.com/kayingai/open-zcode-game-plugins",
+  "catalogUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/catalog.json",
+  "rawBase": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/",
+  "browseBase": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/",
+  "archiveUrl": "https://github.com/kayingai/open-zcode-game-plugins/archive/refs/heads/main.tar.gz",
+  "cloneUrl": "https://github.com/kayingai/open-zcode-game-plugins.git",
+  "branch": "main",
+  "hosts": [
+    "zcode",
+    "kayingcode"
+  ],
+  "categories": {
+    "game-design": {
+      "zh-CN": "策划与原型",
+      "en": "Design & Prototyping"
+    },
+    "game-ui": {
+      "zh-CN": "游戏 UI 与交互",
+      "en": "Game UI & Interaction"
+    },
+    "game-art": {
+      "zh-CN": "美术与资源",
+      "en": "Art & Assets"
+    },
+    "game-engine": {
+      "zh-CN": "引擎集成",
+      "en": "Engine Integration"
+    },
+    "game-content": {
+      "zh-CN": "内容与关卡",
+      "en": "Content & Levels"
+    },
+    "game-audio": {
+      "zh-CN": "音频",
+      "en": "Audio"
+    },
+    "game-tooling": {
+      "zh-CN": "工程工具链",
+      "en": "Engineering Tooling"
+    },
+    "other": {
+      "zh-CN": "其他",
+      "en": "Other"
+    }
+  },
+  "count": 1,
+  "protocol": {
+    "version": "1.0",
+    "strategy": "github-to-local-source",
+    "reason": "KayingCode.localrun and local-first hosts reject remote marketplace / CDN plugin sources.",
+    "steps": [
+      "Fetch this catalog.json over HTTPS (do not cache indefinitely).",
+      "Filter entries by hosts, category and keywords; read description_i18n for the user's language.",
+      "Resolve source.type: bundled (files inside this repo), git (clone at source.ref), or zip (download and verify sha256).",
+      "Place the host package directory at a stable local path; never write into the host's internal state directly.",
+      "Verify marketplace.json and the plugin manifest exist and that name/version match this entry; verify LICENSE / NOTICE are present.",
+      "Register the local directory as a local marketplace source (or add it to plugins.dirs), then install and enable the plugin.",
+      "Report what was installed, its version, and the exact local path to the user."
+    ],
+    "constraints": [
+      "HTTPS only; prefer immutable commit SHAs over mutable tags.",
+      "Verify sha256 whenever source.type is zip; abort on mismatch.",
+      "Never register a remote GitHub URL as a marketplace source in local-first hosts.",
+      "Do not execute plugin install scripts, hooks, or downloaded binaries without user review.",
+      "Do not overwrite an existing installed plugin without a backup and explicit confirmation.",
+      "The plugin's own license applies, not this repository's Apache-2.0."
+    ]
+  },
+  "plugins": [
+    {
+      "name": "kaying-for-ui",
+      "version": "0.2.0",
+      "displayName": "Game UI Design & Handoff",
+      "displayName_i18n": {
+        "zh-CN": "游戏界面设计UI设计-咖影",
+        "en": "Game UI Design & Handoff"
+      },
+      "description": "Game UI design and handoff workflow: from GDD/PRD and design specs to screen extension, component breakdown, sprite slicing, atlas packing, and Godot/Unity/Cocos JSON handoff.",
+      "description_i18n": {
+        "zh-CN": "游戏 UI 设计与交付全流程：从 GDD/PRD、风格契约、页面视觉到组件拆解、切图、图集打包与 Godot/Unity/Cocos 引擎 JSON 交付；零依赖 Node CLI，开箱即用。",
+        "en": "Game UI design and handoff workflow: from GDD/PRD and design specs to screen extension, component breakdown, sprite slicing, atlas packing, and Godot/Unity/Cocos JSON handoff. Zero-dependency Node CLI."
+      },
+      "category": "game-ui",
+      "marketplaceCategory": "游戏/3D",
+      "keywords": [
+        "game-ui",
+        "ui-design",
+        "design-tokens",
+        "sprite-sheet",
+        "atlas",
+        "9-slice",
+        "godot",
+        "unity",
+        "cocos",
+        "handoff"
+      ],
+      "hosts": [
+        "zcode",
+        "kayingcode"
+      ],
+      "author": {
+        "name": "kayingai.com",
+        "url": "https://kayingai.com"
+      },
+      "license": "MIT",
+      "repository": "https://gitee.com/citiao/kaying-for-ui",
+      "homepage": "https://gitee.com/citiao/kaying-for-ui",
+      "examplePrompts": [
+        "用咖影根据参考图为一个国风卡牌 RPG 搭建完整 UI 项目：先完成策划与设计规格，再生成主界面视觉",
+        "把这张主界面拆成透明底组件，然后切雪碧图为单张 PNG 并打包图集",
+        "Generate 9-slice, atlas, and Unity/Godot handoff JSON"
+      ],
+      "source": {
+        "type": "bundled",
+        "repository": "https://gitee.com/citiao/kaying-for-ui.git",
+        "ref": "a827f1c6706b9a04ac26d4ca761c30e1b7ccbe05",
+        "packages": {
+          "zcode": {
+            "path": "bundled/kaying-for-ui/zcode",
+            "marketplace": "marketplace.json",
+            "pluginManifest": ".zcode-plugin/plugin.json",
+            "licenseFile": "LICENSE",
+            "noticeFile": "NOTICE",
+            "browseUrl": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/bundled/kaying-for-ui/zcode",
+            "marketplaceUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/bundled/kaying-for-ui/zcode/marketplace.json"
+          },
+          "kayingcode": {
+            "path": "bundled/kaying-for-ui/kayingcode",
+            "marketplace": "marketplace.json",
+            "pluginManifest": ".kayingcode-plugin/plugin.json",
+            "licenseFile": "LICENSE",
+            "noticeFile": "NOTICE",
+            "browseUrl": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/bundled/kaying-for-ui/kayingcode",
+            "marketplaceUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/bundled/kaying-for-ui/kayingcode/marketplace.json"
+          }
+        }
+      },
+      "install": {
+        "strategy": "local-marketplace",
+        "requires": [
+          "node>=18 (bundled with the host; nothing to install)"
+        ],
+        "notes_i18n": {
+          "zh-CN": "将 bundled/kaying-for-ui/<宿主> 目录放到本机稳定路径，在宿主的「插件市场 → 新增」中注册为本地源后安装启用；不要注册远程 URL。",
+          "en": "Copy bundled/kaying-for-ui/<host> to a stable local path, register that directory as a local marketplace source in the host, then install and enable the plugin. Do not register a remote URL."
+        }
+      },
+      "addedAt": "2026-11-14",
+      "updatedAt": "2026-11-14",
+      "catalog": {
+        "entryUrl": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/plugins/kaying-for-ui.json",
+        "entryBrowseUrl": "https://github.com/kayingai/open-zcode-game-plugins/tree/main/plugins/kaying-for-ui.json",
+        "rawBase": "https://raw.githubusercontent.com/kayingai/open-zcode-game-plugins/main/",
+        "archiveUrl": "https://github.com/kayingai/open-zcode-game-plugins/archive/refs/heads/main.tar.gz",
+        "cloneUrl": "https://github.com/kayingai/open-zcode-game-plugins.git"
+      }
+    }
+  ]
+}

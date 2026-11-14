@@ -1,0 +1,61 @@
+name: Sync catalog after merge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'plugins/**'
+      - 'bundled/**'
+      - 'catalog.config.json'
+      - 'schema/**'
+      - 'scripts/**'
+      - 'templates/**'
+      - '.github/workflows/update-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalog-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Regenerate catalog.json and both README tables
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate all entries
+        run: node scripts/validate.mjs
+
+      - name: Regenerate catalog + Chinese/English README tables
+        # GITHUB_REPOSITORY is set by Actions, so generated URLs are correct
+        # without any manual URL replacement.
+        run: node scripts/build.mjs
+
+      - name: Commit generated files if changed
+        shell: bash
+        run: |
+          if git diff --quiet -- catalog.json README.md README.en.md; then
+            echo "Generated files already up to date — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json README.md README.en.md
+          git commit -m "chore(catalog): sync plugin list [skip ci]"
+          # Serialize with concurrent pushes; GITHUB_TOKEN pushes do not
+          # trigger a new workflow run, and [skip ci] is a second guard.
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "Synced catalog.json and both README tables."

@@ -1,0 +1,65 @@
+{
+  "$schema": "../schema/plugin.schema.json",
+  "name": "kaying-for-ui",
+  "version": "0.2.0",
+  "displayName": "Game UI Design & Handoff",
+  "displayName_i18n": {
+    "zh-CN": "游戏界面设计UI设计-咖影",
+    "en": "Game UI Design & Handoff"
+  },
+  "description": "Game UI design and handoff workflow: from GDD/PRD and design specs to screen extension, component breakdown, sprite slicing, atlas packing, and Godot/Unity/Cocos JSON handoff.",
+  "description_i18n": {
+    "zh-CN": "游戏 UI 设计与交付全流程：从 GDD/PRD、风格契约、页面视觉到组件拆解、切图、图集打包与 Godot/Unity/Cocos 引擎 JSON 交付；零依赖 Node CLI，开箱即用。",
+    "en": "Game UI design and handoff workflow: from GDD/PRD and design specs to screen extension, component breakdown, sprite slicing, atlas packing, and Godot/Unity/Cocos JSON handoff. Zero-dependency Node CLI."
+  },
+  "category": "game-ui",
+  "marketplaceCategory": "游戏/3D",
+  "keywords": [
+    "game-ui", "ui-design", "design-tokens", "sprite-sheet", "atlas",
+    "9-slice", "godot", "unity", "cocos", "handoff"
+  ],
+  "hosts": ["zcode", "kayingcode"],
+  "author": {
+    "name": "kayingai.com",
+    "url": "https://kayingai.com"
+  },
+  "license": "MIT",
+  "repository": "https://gitee.com/citiao/kaying-for-ui",
+  "homepage": "https://gitee.com/citiao/kaying-for-ui",
+  "examplePrompts": [
+    "用咖影根据参考图为一个国风卡牌 RPG 搭建完整 UI 项目：先完成策划与设计规格，再生成主界面视觉",
+    "把这张主界面拆成透明底组件，然后切雪碧图为单张 PNG 并打包图集",
+    "Generate 9-slice, atlas, and Unity/Godot handoff JSON"
+  ],
+  "source": {
+    "type": "bundled",
+    "repository": "https://gitee.com/citiao/kaying-for-ui.git",
+    "ref": "a827f1c6706b9a04ac26d4ca761c30e1b7ccbe05",
+    "packages": {
+      "zcode": {
+        "path": "bundled/kaying-for-ui/zcode",
+        "marketplace": "marketplace.json",
+        "pluginManifest": ".zcode-plugin/plugin.json",
+        "licenseFile": "LICENSE",
+        "noticeFile": "NOTICE"
+      },
+      "kayingcode": {
+        "path": "bundled/kaying-for-ui/kayingcode",
+        "marketplace": "marketplace.json",
+        "pluginManifest": ".kayingcode-plugin/plugin.json",
+        "licenseFile": "LICENSE",
+        "noticeFile": "NOTICE"
+      }
+    }
+  },
+  "install": {
+    "strategy": "local-marketplace",
+    "requires": ["node>=18 (bundled with the host; nothing to install)"],
+    "notes_i18n": {
+      "zh-CN": "将 bundled/kaying-for-ui/<宿主> 目录放到本机稳定路径，在宿主的「插件市场 → 新增」中注册为本地源后安装启用；不要注册远程 URL。",
+      "en": "Copy bundled/kaying-for-ui/<host> to a stable local path, register that directory as a local marketplace source in the host, then install and enable the plugin. Do not register a remote URL."
+    }
+  },
+  "addedAt": "2026-11-14",
+  "updatedAt": "2026-11-14"
+}

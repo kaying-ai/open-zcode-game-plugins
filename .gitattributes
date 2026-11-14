@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+*.md    text eol=lf
+*.json  text eol=lf
+*.mjs   text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+LICENSE text eol=lf
+NOTICE  text eol=lf
+
+# bundled/ is a verbatim third-party copy of kaying-for-ui release packages.
+# Its Markdown uses two trailing spaces for hard line breaks, which is valid
+# Markdown rather than a whitespace error. Do not "fix" it and cause drift.
+bundled/** whitespace=-trailing-space,-cr-at-eol

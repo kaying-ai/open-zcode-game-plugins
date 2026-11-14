@@ -1,0 +1,77 @@
+NOTICE — kaying-for-ui
+======================
+
+This file accompanies every distributed copy of kaying-for-ui: the source
+repository, the platform plugin packages, the marketplace bundle and the
+self-contained skill bundle. It keeps the third-party copyright and license
+notices in a separate file so they travel with the software.
+
+1. This project
+---------------
+kaying-for-ui
+Copyright (c) 2026 kayingai.com
+License: MIT — see the LICENSE file shipped next to this NOTICE.
+
+2. Upstream project
+-------------------
+The staged game-UI workflow, the Spec-Kit style project documents, the visual
+contract model, the screen taxonomy, the component / sprite pipeline, and the
+atlas + engine handoff conventions used by this project were initially
+informed by and adapted from:
+
+    Game UI Design Workflow
+    https://github.com/guiguiyan930-source/game-ui-design-workflow
+    Copyright (c) 2026 Game UI Design Workflow contributors
+    License: MIT
+
+The upstream repository states in ORIGIN.md that its integrated original work
+is released under the MIT License in its root LICENSE file. Its
+docs/SECURITY.md also asks that licenses for third-party material be kept in a
+separate file rather than only mentioned in conversation; this NOTICE is that
+separate file.
+
+The upstream MIT License requires:
+
+    "The above copyright notice and this permission notice shall be included
+     in all copies or substantial portions of the Software."
+
+Its copyright notice and full permission notice are therefore reproduced
+verbatim in section 3 and shipped in every copy of this plugin. Portions
+derived from or adapted from Game UI Design Workflow remain subject to that
+license; the remaining original work in this repository is licensed under the
+MIT License in LICENSE. No endorsement or affiliation with the upstream
+authors is implied. Nothing in this NOTICE grants rights to third-party
+trademarks (see the Trademarks section of README.md).
+
+3. Upstream MIT License (verbatim)
+----------------------------------
+
+MIT License
+
+Copyright (c) 2026 Game UI Design Workflow contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+4. Other third-party components
+-------------------------------
+The `kui` CLI has no third-party runtime dependencies; its PNG, YAML and ZIP
+handling is implemented in this repository. The optional `site/` viewer uses
+react, react-dom, marked and fflate (see site/package.json). Those packages
+are not redistributed in any of the plugin packages described above; when the
+viewer is installed, each dependency ships with its own license text.
